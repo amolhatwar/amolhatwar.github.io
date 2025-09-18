@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://amolhatwar.github.io/</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About Section (if standalone page) -->
+  <url>
+    <loc>https://amolhatwar.github.io/about</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Skills Section (if separate) -->
+  <url>
+    <loc>https://amolhatwar.github.io/skills</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://amolhatwar.github.io/projects</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- AI Modules -->
+  <url>
+    <loc>https://amolhatwar.github.io/ai</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Certifications -->
+  <url>
+    <loc>https://amolhatwar.github.io/certifications</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://amolhatwar.github.io/contact</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Portfolio Page (if separate) -->
+  <url>
+    <loc>https://amolhatwar.github.io/portfolio</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Blog/Articles (if you have, repeat for each blog page) -->
+  <!--
+  <url>
+    <loc>https://amolhatwar.github.io/blog/article-title-url</loc>
+    <lastmod>2025-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  -->
+
+</urlset>

@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amol Hatwar",
+  "url": "https://amolhatwar.github.io",
+  "image": "https://amolhatwar.github.io/assets/AH_Profile_Copy.png",
+  "jobTitle": "Data Analyst and AI Specialist",
+  "description": "Experienced Data Analyst specializing in Power BI, advanced analytics, and AI-powered reporting. Helping businesses unlock insights through data and automation.",
+  "sameAs": [
+    "https://linkedin.com/in/amolhatwar",
+    "https://github.com/amolhatwar",
+    "https://twitter.com/amolhatwar"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Amol Hatwar Data Analytics",
+    "url": "https://amolhatwar.github.io"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://amolhatwar.github.io/"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Your University/Institute Name"
+  },
+  "knowsAbout": [
+    "Power BI",
+    "Data Analytics",
+    "SQL",
+    "Python",
+    "Artificial Intelligence",
+    "Excel"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Data Analyst",
+    "description": "Analyzes and interprets complex data to help businesses make informed decisions."
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "email": "mailto:amolhatwar.analytics@gmail.com",
+    "contactType": "professional",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Hindi"]
+  }]
+}

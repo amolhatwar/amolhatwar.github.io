@@ -1,0 +1,54 @@
+# Disable directory listing - hide files/folders without index
+Options -Indexes
+
+# Disable server signature - do not expose server details
+ServerSignature Off
+
+# Block access to sensitive files
+<FilesMatch "(\.htaccess|\.htpasswd|\.ini|\.log|\.sh|\.bak)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Prevent MIME type sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# Prevent clickjacking by allowing framing only from same origin
+Header always set X-Frame-Options "SAMEORIGIN"
+
+# Referrer control for privacy
+Header always set Referrer-Policy "no-referrer-when-downgrade"
+
+# Content Security Policy (CSP) - control resource loading sources
+Header always set Content-Security-Policy "default-src 'self'; \
+  script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; \
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; \
+  img-src 'self' data: https://amolhatwar.github.io; \
+  font-src 'self' https://fonts.gstatic.com;"
+
+# Permissions Policy to restrict browser features
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+# Enable HTTP Strict Transport Security (HSTS) - enforce HTTPS for 6 months
+Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
+
+# Disable caching of sensitive pages (optional, adjust as needed)
+<FilesMatch "(login|admin)\.php$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</FilesMatch>
+
+# Prevent Cross-Site Scripting (XSS) and other injections (additional layer)
+# (This is basic and should be paired with app layer validation)
+<IfModule mod_security.c>
+  SecFilterEngine On
+  SecFilterScanPOST On
+</IfModule>
+
+
+# Redirect HTTP to HTTPS - Uncomment and configure if SSL is correctly setup
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+

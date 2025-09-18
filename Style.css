@@ -1,0 +1,301 @@
+/* Reset and Base Styling */
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+  scroll-behavior: smooth;
+  font-smooth: true;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Apply body styles and font */
+body, html {
+  height: 100%; width: 100%;
+  font-family: 'Poppins', 'Outfit', sans-serif;
+  background: linear-gradient(130deg, #f0f9ff, #e0f0f8);
+  color: #222;
+  overflow-x: hidden;
+}
+
+/* Container & Layout */
+.main-container {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 70px 80px;
+  background: rgba(255,255,255,0.94);
+  border-radius: 24px;
+  box-shadow: 0 16px 60px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+}
+.main-container:hover {
+  box-shadow: 0 20px 70px rgba(0,0,0,0.18);
+  transform: translateY(-3px);
+}
+
+/* Header with Logo & Profile */
+header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  border: 4px solid #058cf5;
+  box-shadow: 0 12px 36px rgba(0, 90, 150, 0.2);
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  transition: all 0.4s ease;
+}
+.logo-container:hover {
+  transform: scale(1.05) rotate(4deg) skewY(2deg);
+  box-shadow: 0 14px 46px rgba(0, 80, 130, 0.3);
+}
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.header-title {
+  font-size: 3rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #055a8f;
+  text-shadow: 1px 1px 4px #9fc1d6;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.header-subtitle {
+  font-size: 1.3rem;
+  color: #357a9e;
+  letter-spacing: 0.9px;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Navigation Menu with Hover Effects */
+nav {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+nav a,
+.nav-btn {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #058cf5;
+  border: 2px solid #058cf5;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.25s linear;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px #058cf5;
+}
+nav a:hover,
+.nav-btn:hover {
+  background-color: #e0f7fa;
+  color: #045a7d;
+  box-shadow: 0 12px 36px rgba(0, 85, 137, 0.24);
+}
+nav a::after,
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  left: 50%;
+  background-color: #045a7d;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+}
+nav a:hover::after,
+.nav-btn:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Download Button with Hover Effects */
+.download-btn {
+  background-color: #058cf5;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1.17rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(5, 140, 245, 0.4);
+  transition: all 0.3s ease;
+}
+.download-btn:hover {
+  background-color: #045f9e;
+  box-shadow: 0 10px 28px rgba(4, 95, 158, 0.5);
+}
+
+/* Sections & Headers */
+section {
+  margin-bottom: 62px;
+}
+h2 {
+  font-size: 1.6rem;
+  color: #055a8f;
+  border-left: 6px solid #058cf5;
+  padding-left: 18px;
+  margin-bottom: 30px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #058cf5;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-radius: 2px;
+}
+
+/* Glass Block Styles for Content */
+.glass-block {
+  background: rgba(245, 249, 255, 0.88);
+  border-radius: 30px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(5, 140, 245, 0.2);
+  transition: all 0.4s ease;
+}
+.glass-block:hover {
+  background: rgba(245, 249, 255, 1);
+}
+
+/* Grid for Skills, Projects, Certifications */
+.skills-grid,
+.projects-list,
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+}
+
+/* Card Designs & Hover Effects */
+.skill-card,
+.project-card,
+.cert-card {
+  background: rgba(255, 255, 255, 0.99);
+  border-radius: 22px;
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  cursor: pointer;
+  position: relative;
+}
+.skill-card:hover,
+.project-card:hover,
+.cert-card:hover {
+  transform: scale(1.07) translateY(-10px);
+  box-shadow: 0 20px 70px rgba(0, 80, 120, 0.2);
+  z-index: 9;
+  border: 2px solid #058cf5;
+}
+.skill-title,
+.project-title {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #055a8f;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.skill-title i,
+.project-title i {
+  font-size: 1.55rem;
+  color: #045f9e;
+  transition: transform 0.4s ease;
+}
+.skill-title i:hover,
+.project-title i:hover {
+  transform: rotate(15deg) scale(1.2);
+}
+.cert-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #2179b8;
+  margin-bottom: 12px;
+}
+.cert-img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.cert-img:hover {
+  transform: scale(1.12) rotate(2deg);
+}
+
+/* AI & Tech Icons Animations (specific) */
+.ai-icon {
+  font-size: 3rem;
+  animation: spinAi 6s linear infinite;
+  color: #45d6b2;
+  margin-right: 15px;
+}
+@keyframes spinAi {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+/* Contact Section */
+.contact-block {
+  background: rgba(245, 250, 255, 0.9);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 16px 65px rgba(10, 60, 100, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-link {
+  font-size: 1.17rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #055a8f;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.contact-link:hover {
+  color: #003c58;
+  text-shadow: 0 0 4px #003c58aa;
+  text-decoration: underline;
+}
+
+/* Responsiveness and Small Devices */
+@media(max-width: 1024px){
+  body { font-size: 15px;}
+  .main-container { padding: 50px 28px;}
+}
+@media(max-width: 661px){
+  .skills-grid,
+  .projects-list,
+  .cert-list { grid-template-columns: 1fr; gap: 20px; }
+  header { padding: 0 20px; }
+}
