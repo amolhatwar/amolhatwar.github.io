@@ -387,36 +387,35 @@
         <h1 class="title">Amol Hatwar</h1>
         
         <div class="subtitle">
-            <span class="static-text">I am a </span>
             <span class="typing" id="typing"></span>
         </div>
     </div>
-<div class="menu-toggle" id="mobile-menu">
+<div class="menu-toggle" id="mobile-menu" style="display: none; color: white; font-size: 1.5rem;">
             <i class="fas fa-bars"></i>
         </div>
 
-       <nav class="nav-menu" style="margin-top: auto; margin-bottom: auto; width: 100%;">
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
-                <li><a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
-                <li><a href="#ai" class="nav-link"><i class="fas fa-brain"></i> AI Modules</a></li>
-                <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        <nav class="nav-menu">
+            <ul style="display: flex; flex-direction: row; gap: 30px; list-style: none; margin: 0; padding: 0;">
+                <li><a href="#about" class="nav-link" style="color: white; text-decoration: none; font-size: 1rem;"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#skills" class="nav-link" style="color: white; text-decoration: none; font-size: 1rem;"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects" class="nav-link" style="color: white; text-decoration: none; font-size: 1rem;"><i class="fas fa-laptop-code"></i> Projects</a></li>
+                <li><a href="#ai" class="nav-link" style="color: white; text-decoration: none; font-size: 1rem;"><i class="fas fa-brain"></i> AI Modules</a></li>
+                <li><a href="#contact" class="nav-link" style="color: white; text-decoration: none; font-size: 1rem;"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
 
-        <div class="header-footer">
+        <div class="header-footer" style="display: flex; align-items: center; gap: 20px;">
+            <div class="social-mini" style="display: flex; gap: 15px;">
+                <a href="https://linkedin.com/in/amolhatwar" target="_blank" style="color: white;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/amolhatwar" target="_blank" style="color: white;"><i class="fab fa-github"></i></a>
+            </div>
+
             <button 
                 class="download-btn neon-btn" 
-                onclick="window.open('assets/amolresume.pdf', '_blank')">
-                <i class="fas fa-download"></i> Download Resume
+                onclick="window.open('assets/amolresume.pdf', '_blank')"
+                style="padding: 8px 20px; background: transparent; border: 2px solid #ffa500; color: #ffa500; border-radius: 20px; cursor: pointer; font-weight: bold;">
+                <i class="fas fa-download"></i> Resume
             </button>
-        
-            <div class="social-mini">
-                <a href="https://linkedin.com/in/amolhatwar" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/amolhatwar" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
         </div>
 
     </header>
@@ -807,6 +806,7 @@
 
 </body>
 </html>
+
 
 
 
