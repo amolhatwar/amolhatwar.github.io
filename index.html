@@ -503,35 +503,226 @@
         </div>
       </div>
     </section>
-    <!-- AI Modules -->
-    <section id="ai">
-      <h2>AI Modules</h2>
-      <div class="ai-card">
-        <span class="ai-icon"><i class="fa-solid fa-robot"></i></span>
-        <span class="ai-desc">
-          <strong>Chatbot KPI Query</strong>: Integrated chatbot (OpenAI API ready) se business dashboards pe live questions puch sakte ho.<br />
-          <em>Imagine: "Show last month sales trend", instant dashboard reply.</em>
-        </span>
-      </div>
-      <div class="ai-card">
-        <span class="ai-icon"><i class="fa-solid fa-bolt"></i></span>
-        <span class="ai-desc">
-          <strong>Auto Data Insights</strong>: Automated anomaly detection and recommendations for business problems.
-        </span>
-      </div>
-      <div class="ai-card">
-        <span class="ai-icon"><i class="fa-solid fa-cloud-sun"></i></span>
-        <span class="ai-desc">
-          <strong>Future Forecast Module</strong>: Predictive analytics dashboard using Python ML — real trends, realistic future modeling.
-        </span>
-      </div>
-      <div class="ai-card">
-        <span class="ai-icon"><i class="fa-solid fa-eye"></i></span>
-        <span class="ai-desc">
-          <strong>Accessibility AI</strong>: Screen reader, voice navigation, color vision accessibility built-in. Modern and future proof.
-        </span>
-      </div>
-    </section>
+      
+<style>
+    /* LOCAL CSS FOR AI SECTION */
+    #ai {
+        padding: 80px 20px;
+        background-color: #000000; /* Pitch Black Background */
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Section Title */
+    .ai-title-box {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .ai-title-box h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .ai-highlight {
+        color: #ffa500; /* Neon Orange */
+        text-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+    }
+
+    /* Grid Layout */
+    .ai-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- 1. THE HERO CARD: TERMINAL STYLE --- */
+    .terminal-card {
+        grid-column: 1 / -1; /* Full Width on Mobile, adjusts on desktop */
+        background: #0a0a0a;
+        border: 1px solid #333;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .terminal-card:hover {
+        border-color: #ffa500;
+        transform: translateY(-5px);
+    }
+
+    /* Terminal Header (Mac Style Dots) */
+    .terminal-header {
+        background: #1c1c1c;
+        padding: 12px 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+    .cmd-title { 
+        margin-left: auto; margin-right: auto; 
+        font-family: 'Courier New', monospace; 
+        font-size: 0.8rem; color: #888; 
+    }
+
+    /* Terminal Body */
+    .terminal-body {
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.95rem;
+        min-height: 140px;
+        background: #050505;
+    }
+
+    .cmd-line { margin-bottom: 8px; display: flex; }
+    .prompt { color: #ffa500; margin-right: 10px; font-weight: bold; }
+    
+    /* Animations */
+    .type-text { 
+        overflow: hidden; 
+        white-space: nowrap; 
+        border-right: 2px solid #ffa500; 
+        width: 0; 
+        animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    .response-text {
+        color: #cccccc;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+        animation-delay: 2.2s; /* Waits for typing to finish */
+    }
+
+    .insight-box {
+        margin-top: 10px;
+        padding: 10px;
+        background: rgba(255, 165, 0, 0.1);
+        border-left: 3px solid #ffa500;
+        color: #fff;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+        animation-delay: 2.5s;
+    }
+
+    /* Card Description Footer */
+    .card-footer {
+        padding: 20px;
+        background: #111;
+        border-top: 1px solid #222;
+    }
+    .card-footer h3 { margin: 0 0 5px 0; color: #ffa500; font-size: 1.2rem; }
+    .card-footer p { margin: 0; color: #aaa; font-size: 0.9rem; }
+
+    /* --- 2. STANDARD GLASS CARDS --- */
+    .glass-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 30px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .glass-card:hover {
+        background: rgba(255, 165, 0, 0.05);
+        border-color: #ffa500;
+        transform: translateY(-5px);
+    }
+
+    .ai-icon {
+        font-size: 2rem;
+        color: #ffa500;
+        margin-bottom: 20px;
+        background: rgba(255, 165, 0, 0.1);
+        padding: 15px;
+        border-radius: 50%;
+    }
+
+    .glass-card h3 { color: white; margin-bottom: 10px; font-size: 1.2rem; }
+    .glass-card p { color: #aaa; line-height: 1.6; font-size: 0.9rem; }
+
+    /* KEYFRAMES */
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent } }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* Responsive Adjustments */
+    @media (min-width: 900px) {
+        .terminal-card { grid-column: span 2; } /* Wide card on desktop */
+    }
+</style>
+
+<section id="ai">
+    <div class="ai-title-box">
+        <h2><span class="ai-highlight">Next-Gen</span> AI Modules</h2>
+        <p style="color: #777;">Bridging the gap between Data Analytics and Artificial Intelligence.</p>
+    </div>
+
+    <div class="ai-grid">
+        
+        <div class="terminal-card">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="cmd-title">Amol_AI_Assistant.exe</span>
+            </div>
+            
+            <div class="terminal-body">
+                <div class="cmd-line">
+                    <span class="prompt">user@amol:~$</span>
+                    <span class="type-text">"Show sales trend for Q4..."</span>
+                </div>
+                
+                <div class="cmd-line response-text">
+                    <span style="color: #27c93f;">[SYSTEM]</span>&nbsp;Connecting to SQL Database... Processing NLP...
+                </div>
+
+                <div class="insight-box">
+                    <strong>✔ Insight Generated:</strong><br>
+                    Revenue increased by <span style="color: #ffa500;">24%</span> compared to last month.<br>
+                    <small style="color:#777;">(Visualizing data in dashboard...)</small>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h3>NLP to SQL Query Engine</h3>
+                <p>Natural Language Processing integration. Executives can ask questions in plain English, and the AI generates live SQL queries and Power BI visuals instantly.</p>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <div class="ai-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Auto Data Insights</h3>
+            <p>Automated anomaly detection algorithms run 24/7. The system flags revenue drops or data outliers instantly, before you even open the report.</p>
+        </div>
+
+        <div class="glass-card">
+            <div class="ai-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Python ML Forecasting</h3>
+            <p>Predictive analytics using Scikit-Learn. Not just history—I build models that forecast future trends with 95% confidence intervals.</p>
+        </div>
+
+        <div class="glass-card">
+            <div class="ai-icon"><i class="fa-solid fa-eye"></i></div>
+            <h3>Smart Accessibility</h3>
+            <p>AI-driven contrast adjustment for color-blind users and screen-reader optimized reporting tags. Making data accessible to everyone.</p>
+        </div>
+
+    </div>
+</section>
+      
     <!-- Certifications Carousel -->
     <section id="certifications">
       <h2>Certifications</h2>
@@ -827,6 +1018,7 @@
 
 </body>
 </html>
+
 
 
 
