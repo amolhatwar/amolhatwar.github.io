@@ -390,31 +390,52 @@
             <span class="typing" id="typing"></span>
         </div>
     
-<div class="menu-toggle" id="mobile-menu" style="display: none; color: #ffffff; font-size: 1.5rem;">
-            <i class="fas fa-bars"></i>
-        </div>
-        
-        <nav class="nav-menu">
+<nav class="nav-menu" style="flex-grow: 1; display: flex; justify-content: center;">
             <ul style="display: flex; flex-direction: row; gap: 30px; list-style: none; margin: 0; padding: 0;">
-                <li><a href="#about" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;"><i class="fas fa-user" style="color: #ffa500;"></i> About</a></li>
-                <li><a href="#skills" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;"><i class="fas fa-code" style="color: #ffa500;"></i> Skills</a></li>
-                <li><a href="#projects" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;"><i class="fas fa-laptop-code" style="color: #ffa500;"></i> Projects</a></li>
-                <li><a href="#ai" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;"><i class="fas fa-brain" style="color: #ffa500;"></i> AI Modules</a></li>
-                <li><a href="#contact" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; font-weight: 500;"><i class="fas fa-envelope" style="color: #ffa500;"></i> Contact</a></li>
+                
+                <li>
+                    <a href="#about" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-user" style="color: #ffa500;"></i> 
+                        <span>About</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#skills" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-code" style="color: #ffa500;"></i> 
+                        <span>Skills</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#projects" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-laptop-code" style="color: #ffa500;"></i> 
+                        <span>Projects</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#ai" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-brain" style="color: #ffa500;"></i> 
+                        <span>AI Modules</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#contact" class="nav-link" style="color: #ffffff; text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-envelope" style="color: #ffa500;"></i> 
+                        <span>Contact</span>
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <div class="header-footer" style="display: flex; align-items: center; gap: 20px;">
-            <div class="social-mini" style="display: flex; gap: 15px;">
-                <a href="https://linkedin.com/in/amolhatwar" target="_blank" style="color: #ffffff; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/amolhatwar" target="_blank" style="color: #ffffff; font-size: 1.2rem;"><i class="fab fa-github"></i></a>
-            </div>
-
+        <div class="header-footer" style="min-width: 150px; display: flex; justify-content: flex-end;">
             <button 
-                class="download-btn neon-btn" 
+                class="download-btn" 
                 onclick="window.open('assets/amolresume.pdf', '_blank')"
-                style="padding: 8px 24px; background: transparent; border: 2px solid #ffa500; color: #ffa500; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-download"></i> Resume
+                style="padding: 8px 24px; background: transparent; border: 2px solid #ffa500; color: #ffffff; border-radius: 50px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+                <i class="fas fa-download" style="color: #ffa500;"></i> Resume
             </button>
         </div>
 
@@ -806,6 +827,7 @@
 
 </body>
 </html>
+
 
 
 
