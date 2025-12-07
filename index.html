@@ -372,31 +372,55 @@
 </script>
 
   <div class="main-container">
-    <header>
-      <img src="asset/amol hatwar.png" alt="Amol Hatwar Profile" class="profile-img" />
-      <div class="title">Amol Hatwar</div>
-        <img 
-    src="asset/amol hatwar.png" 
-    alt="Amol Hatwar - Data Analyst & AI Specialist" 
-    title="Amol Hatwar Portfolio Profile"
-    class="profile-img" 
-/>
-      <div class="subtitle typing" id="typing"></div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#ai">AI Modules</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-        <button
-          class="download-btn nav-btn"
-          onclick="window.open('assets/amolresume.pdf', '_blank')"
-        >
-          <i class="fas fa-download"></i> Resume
+   <header class="sidebar-header glass-effect">
+    
+    <div class="profile-section">
+        <div class="img-container">
+            <img 
+                src="assets/amol-hatwar-data-analyst.png" 
+                alt="Amol Hatwar - Data Analyst & AI Specialist" 
+                title="Amol Hatwar Portfolio Profile"
+                class="profile-img glow-effect" 
+            />
+            <div class="status-indicator"></div> </div>
+        
+        <h1 class="title">Amol Hatwar</h1>
+        
+        <div class="subtitle">
+            <span class="static-text">I am a </span>
+            <span class="typing" id="typing"></span>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
+            <li><a href="#ai" class="nav-link"><i class="fas fa-brain"></i> AI Modules</a></li>
+            <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-footer">
+        <button 
+            class="download-btn neon-btn" 
+            onclick="window.open('assets/amolresume.pdf', '_blank')">
+            <i class="fas fa-download"></i> Download Resume
         </button>
-      </nav>
-    </header>
+        
+        <div class="social-mini">
+            <a href="https://linkedin.com/in/amolhatwar" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/amolhatwar" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+
+</header>
     <!-- About Section -->
     <section id="about">
       <h2>About Me</h2>
@@ -783,6 +807,7 @@
 
 </body>
 </html>
+
 
 
 
