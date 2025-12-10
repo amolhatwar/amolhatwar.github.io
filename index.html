@@ -508,8 +508,8 @@
     /* LOCAL CSS FOR AI SECTION */
     #ai {
         padding: 80px 20px;
-        background-color: #000000; /* Pitch Black Background */
-        color: white;
+        background-color: #f9f9f9; /* Smooth White Background */
+        color: #333;
         font-family: 'Poppins', sans-serif;
     }
 
@@ -522,12 +522,13 @@
     .ai-title-box h2 {
         font-size: 2.5rem;
         margin-bottom: 10px;
-        color: #ffffff;
+        color: #222; /* Dark Text */
+        font-weight: 700;
     }
 
     .ai-highlight {
         color: #ffa500; /* Neon Orange */
-        text-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+        font-weight: 800;
     }
 
     /* Grid Layout */
@@ -540,13 +541,15 @@
     }
 
     /* --- 1. THE HERO CARD: TERMINAL STYLE --- */
+    /* Terminal dark hi rakha hai taaki "Coding" feel aaye, par shadow adjust ki hai */
     .terminal-card {
-        grid-column: 1 / -1; /* Full Width on Mobile, adjusts on desktop */
-        background: #0a0a0a;
+        grid-column: 1 / -1; /* Full Width */
+        background: #1e1e1e; /* VS Code Dark Grey */
         border: 1px solid #333;
-        border-radius: 12px;
+        border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        /* Soft Shadow for White Background */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
         transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
@@ -555,9 +558,9 @@
         transform: translateY(-5px);
     }
 
-    /* Terminal Header (Mac Style Dots) */
+    /* Terminal Header */
     .terminal-header {
-        background: #1c1c1c;
+        background: #252526;
         padding: 12px 15px;
         display: flex;
         align-items: center;
@@ -571,7 +574,7 @@
     .cmd-title { 
         margin-left: auto; margin-right: auto; 
         font-family: 'Courier New', monospace; 
-        font-size: 0.8rem; color: #888; 
+        font-size: 0.8rem; color: #aaa; 
     }
 
     /* Terminal Body */
@@ -580,7 +583,8 @@
         font-family: 'Courier New', monospace;
         font-size: 0.95rem;
         min-height: 140px;
-        background: #050505;
+        background: #000000; /* Pitch Black for Code */
+        color: #eee;
     }
 
     .cmd-line { margin-bottom: 8px; display: flex; }
@@ -599,13 +603,13 @@
         color: #cccccc;
         opacity: 0;
         animation: fadeIn 0.5s forwards;
-        animation-delay: 2.2s; /* Waits for typing to finish */
+        animation-delay: 2.2s; 
     }
 
     .insight-box {
         margin-top: 10px;
         padding: 10px;
-        background: rgba(255, 165, 0, 0.1);
+        background: rgba(255, 165, 0, 0.15);
         border-left: 3px solid #ffa500;
         color: #fff;
         opacity: 0;
@@ -613,31 +617,33 @@
         animation-delay: 2.5s;
     }
 
-    /* Card Description Footer */
+    /* Card Description Footer (Dark Area) */
     .card-footer {
         padding: 20px;
-        background: #111;
-        border-top: 1px solid #222;
+        background: #1e1e1e;
+        border-top: 1px solid #333;
     }
     .card-footer h3 { margin: 0 0 5px 0; color: #ffa500; font-size: 1.2rem; }
-    .card-footer p { margin: 0; color: #aaa; font-size: 0.9rem; }
+    .card-footer p { margin: 0; color: #bbb; font-size: 0.9rem; }
 
-    /* --- 2. STANDARD GLASS CARDS --- */
+    /* --- 2. STANDARD CARDS (LIGHT THEME) --- */
     .glass-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
+        background: #ffffff; /* Pure White Card */
+        border: 1px solid #e0e0e0; /* Light Gray Border */
+        border-radius: 15px;
         padding: 30px;
         transition: 0.3s;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        /* Clean Light Shadow */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .glass-card:hover {
-        background: rgba(255, 165, 0, 0.05);
-        border-color: #ffa500;
         transform: translateY(-5px);
+        border-color: #ffa500;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     }
 
     .ai-icon {
@@ -647,10 +653,24 @@
         background: rgba(255, 165, 0, 0.1);
         padding: 15px;
         border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .glass-card h3 { color: white; margin-bottom: 10px; font-size: 1.2rem; }
-    .glass-card p { color: #aaa; line-height: 1.6; font-size: 0.9rem; }
+    .glass-card h3 { 
+        color: #222; /* Dark Heading */
+        margin-bottom: 10px; 
+        font-size: 1.2rem; 
+        font-weight: 600;
+    }
+    .glass-card p { 
+        color: #666; /* Grey Paragraph Text */
+        line-height: 1.6; 
+        font-size: 0.9rem; 
+    }
 
     /* KEYFRAMES */
     @keyframes typing { from { width: 0 } to { width: 100% } }
@@ -659,14 +679,14 @@
 
     /* Responsive Adjustments */
     @media (min-width: 900px) {
-        .terminal-card { grid-column: span 2; } /* Wide card on desktop */
+        .terminal-card { grid-column: span 2; }
     }
 </style>
 
 <section id="ai">
     <div class="ai-title-box">
         <h2><span class="ai-highlight">Next-Gen</span> AI Modules</h2>
-        <p style="color: #777;">Bridging the gap between Data Analytics and Artificial Intelligence.</p>
+        <p style="color: #666;">Bridging the gap between Data Analytics and Artificial Intelligence.</p>
     </div>
 
     <div class="ai-grid">
@@ -692,7 +712,7 @@
                 <div class="insight-box">
                     <strong>✔ Insight Generated:</strong><br>
                     Revenue increased by <span style="color: #ffa500;">24%</span> compared to last month.<br>
-                    <small style="color:#777;">(Visualizing data in dashboard...)</small>
+                    <small style="color:#bbb;">(Visualizing data in dashboard...)</small>
                 </div>
             </div>
 
@@ -1077,7 +1097,7 @@
                     </div>
                     <div class="cert-content">
                         <div class="cert-title">Excel Automation Expert</div>
-                        <div class="cert-meta">Microsoft | June 2024</div>
+                        <div class="cert-meta">Microsoft | June 2025</div>
                     </div>
                 </div>
             </div>
@@ -1090,7 +1110,7 @@
                     </div>
                     <div class="cert-content">
                         <div class="cert-title">Power BI Advanced</div>
-                        <div class="cert-meta">Microsoft | May 2024</div>
+                        <div class="cert-meta">Microsoft | Nov 2025</div>
                     </div>
                 </div>
             </div>
@@ -1103,7 +1123,7 @@
                     </div>
                     <div class="cert-content">
                         <div class="cert-title">Python Data Automation</div>
-                        <div class="cert-meta">Coursera | July 2024</div>
+                        <div class="cert-meta">Coursera | July 2025</div>
                     </div>
                 </div>
             </div>
@@ -1407,6 +1427,7 @@
 
 </body>
 </html>
+
 
 
 
