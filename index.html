@@ -723,40 +723,258 @@
     </div>
 </section>
       
-    <!-- Certifications Carousel -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <div class="glass-block">
+<style>
+    /* 1. CSS FOR CERTIFICATION CARDS */
+    #certifications {
+        padding: 60px 20px;
+        background-color: #000; /* Dark Background */
+        color: white;
+    }
+
+    #certifications h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #fff;
+    }
+
+    /* Card Container */
+    .cert-card {
+        background: #0f0f0f;
+        border: 1px solid #333;
+        border-radius: 15px;
+        overflow: hidden; /* Image bahar nahi niklegi */
+        transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 350px; /* Card ki maximum chaudai set kar di */
+        margin: 0 auto;   /* Center align */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .cert-card:hover {
+        border-color: #ffa500; /* Neon Orange Border on Hover */
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 165, 0, 0.2);
+    }
+
+    /* Image Wrapper - Size Control */
+    .cert-img-wrapper {
+        position: relative;
+        width: 100%;
+        height: 220px; /* FIX: Fixed Height taaki sab barabar dikhe */
+        cursor: pointer;
+        overflow: hidden;
+        background: #000;
+    }
+
+    /* Image Styling - Object Fit Cover */
+    .cert-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* MAGIC: Image crop hoke fit hogi, stretch nahi hogi */
+        transition: transform 0.5s ease;
+        opacity: 0.9;
+    }
+
+    /* Hover Zoom Effect */
+    .cert-img-wrapper:hover .cert-img {
+        transform: scale(1.1); /* Zoom In */
+        opacity: 0.6; /* Darken slightly */
+    }
+
+    /* Zoom Icon Overlay */
+    .zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffa500;
+        font-size: 2.5rem;
+        opacity: 0;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+
+    .cert-img-wrapper:hover .zoom-icon {
+        opacity: 1;
+    }
+
+    /* Text Content */
+    .cert-content {
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #222;
+    }
+
+    .cert-title {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .cert-meta {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    /* 2. CSS FOR LIGHTBOX (FULL SCREEN POPUP) */
+    .lightbox {
+        display: none; /* Default Hidden */
+        position: fixed;
+        z-index: 10000; /* Sabse upar */
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.95); /* Deep Black Overlay */
+        backdrop-filter: blur(8px);
+    }
+
+    /* Popup Image */
+    .lightbox-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 800px;
+        max-height: 80vh;
+        object-fit: contain;
+        border: 2px solid #ffa500; /* Neon Border */
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(255, 165, 0, 0.4);
+        animation: zoomIn 0.3s;
+    }
+
+    /* Caption */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    /* Close Button (X) */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: #fff;
+        font-size: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .close-btn:hover {
+        color: #ffa500;
+    }
+
+    @keyframes zoomIn {
+        from {transform: scale(0.8); opacity: 0;} 
+        to {transform: scale(1); opacity: 1;}
+    }
+
+    /* Mobile Responsive */
+    @media only screen and (max-width: 700px){
+        .lightbox-content { width: 95%; }
+        .cert-img-wrapper { height: 180px; } /* Mobile pe thoda chota */
+    }
+</style>
+
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="glass-block">
         <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="cert-card">
-                <img src="assets/cert_excel.png" alt="Excel Certificate" class="cert-img" loading="lazy" />
-                <div class="cert-title">Excel Automation Expert</div>
-                <div>Microsoft | June 2024</div>
-              </div>
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper" onclick="openLightbox(this)">
+                            <img src="assets/cert_excel.png" alt="Excel Automation Expert" class="cert-img" loading="lazy" />
+                            <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-title">Excel Automation Expert</div>
+                            <div class="cert-meta">Microsoft | June 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper" onclick="openLightbox(this)">
+                            <img src="asset/Power_BI_Marthon_Certificate.png" alt="Power BI Advanced" class="cert-img" loading="lazy" />
+                            <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-title">Power BI Advanced</div>
+                            <div class="cert-meta">Microsoft | May 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="cert-card">
+                        <div class="cert-img-wrapper" onclick="openLightbox(this)">
+                            <img src="assets/cert_python.png" alt="Python Data Automation" class="cert-img" loading="lazy" />
+                            <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-title">Python Data Automation</div>
+                            <div class="cert-meta">Coursera | July 2024</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="swiper-slide">
-              <div class="cert-card">
-                <img src="asset/Power_BI_Marthon_Certificate.png" alt="Power BI Certificate" class="cert-img" loading="lazy" />
-                <div class="cert-title">Power BI Advanced</div>
-                <div>Microsoft | May 2024</div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="cert-card">
-                <img src="assets/cert_python.png" alt="Python Data Automation" class="cert-img" loading="lazy" />
-                <div class="cert-title">Python Data Automation</div>
-                <div>Coursera | July 2024</div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-next" style="color: #ffa500;"></div>
+            <div class="swiper-button-prev" style="color: #ffa500;"></div>
+            <div class="swiper-pagination"></div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div id="caption"></div>
+</div>
+
+<script>
+    // 3. JAVASCRIPT FOR POPUP LOGIC
+    
+    function openLightbox(element) {
+        // Find the image inside the clicked wrapper
+        var img = element.querySelector('img');
+        var lightbox = document.getElementById("lightbox");
+        var lightboxImg = document.getElementById("lightbox-img");
+        var captionText = document.getElementById("caption");
+        
+        // Set content and show
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+        captionText.innerHTML = img.alt; // Uses the alt text as caption
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    // Close when pressing 'Escape' key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    });
+</script>
+      
     <section id="contact">
       <h2>Contact & Connect</h2>
       <div class="glass-block contact-block">
@@ -1018,6 +1236,7 @@
 
 </body>
 </html>
+
 
 
 
